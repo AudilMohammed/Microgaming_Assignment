@@ -1,0 +1,16 @@
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.BAL.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.BAL.pdb
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\AutoMapper.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.Assignment.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.UiModels.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\System.ValueTuple.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\EntityFramework.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.Assignment.pdb
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\Microgaming.UiModels.pdb
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\AutoMapper.pdb
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\AutoMapper.xml
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\System.ValueTuple.xml
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\bin\Debug\EntityFramework.xml
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\obj\Debug\Microgaming.BAL.csprojResolveAssemblyReference.cache
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\obj\Debug\Microgaming.BAL.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.BAL\obj\Debug\Microgaming.BAL.pdb

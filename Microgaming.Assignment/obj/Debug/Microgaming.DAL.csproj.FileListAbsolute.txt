@@ -1,0 +1,10 @@
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\Microgaming.Assignment.dll.config
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\Microgaming.Assignment.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\Microgaming.Assignment.pdb
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\EntityFramework.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\EntityFramework.xml
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\obj\Debug\Microgaming.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\obj\Debug\Microgaming.Assignment.dll
+C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.Assignment\obj\Debug\Microgaming.Assignment.pdb
