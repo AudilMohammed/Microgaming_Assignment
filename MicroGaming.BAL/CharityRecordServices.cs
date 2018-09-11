@@ -14,27 +14,62 @@ namespace Microgaming.BAL
         public List<CharityRecordUiModel> GetRecords(string userId)
         {
             CharityRecordProvider provider = new CharityRecordProvider();
+            return provider.GetRecords(userId);
+
+        }
+        
+
+        public void CreateCharityRecord(CharityRecordUiModel model)
+        {
+            try
+            {               
+                CharityRecordWriter writer = new CharityRecordWriter();
+                writer.Write(model);
+            }
+            catch (Exception ex)
             {
 
-                IEnumerable<CharityRecord> record = provider.GetRecords(userId);
-                var model = new List<CharityRecordUiModel>();
-                foreach (var item in record)
-                {
-                    var result = new CharityRecordUiModel()
-                    {
-                        Charity = item.Charity,
-                        Currency = item.Currency,
-                        Description = item.Description,
-                        FileInfo = item.FileInfo,
-                        id = item.Id,
-                        PlayItFwd = item.PlayItForward,
-                        Title = item.Title,
-                        UserId = item.UserId
-                    };
-                    model.Add(result);
-                }
-                return model;
+                throw ex;
+            }    
+           
+        }
+
+        public List<CharityRecordUiModel> GetRecords()
+        {
+            CharityRecordProvider provider = new CharityRecordProvider();
+            return provider.GetRecords();
+        }
+
+        public CharityRecordUiModel LoadRecordtoEdit(int trid)
+        {
+            CharityRecordProvider provider = new CharityRecordProvider();
+
+            return provider.LoadRecordtoEdit(trid);
+        }
+
+        public void UpdateCharityRecord(CharityRecordUiModel model)
+        {
+            try
+            {
+                CharityRecordWriter writer = new CharityRecordWriter();
+                writer.Update(model);
             }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void DeleteCharityRecord(int trid)
+        {
+            CharityRecordWriter writer = new CharityRecordWriter();
+            writer.DeleteRecord(trid);
+        }
+
+        public void ApproveCharityRecord(int trid)
+        {
+            CharityRecordWriter writer = new CharityRecordWriter();
+            writer.ApproveCharity(trid);
         }
     }
 }

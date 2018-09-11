@@ -1,0 +1,4 @@
+E:\Microgaming.Assignment\Microgaming.Helper\bin\Debug\Microgaming.Helper.dll
+E:\Microgaming.Assignment\Microgaming.Helper\bin\Debug\Microgaming.Helper.pdb
+E:\Microgaming.Assignment\Microgaming.Helper\obj\Debug\Microgaming.Helper.dll
+E:\Microgaming.Assignment\Microgaming.Helper\obj\Debug\Microgaming.Helper.pdb

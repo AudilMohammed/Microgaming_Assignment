@@ -3,3 +3,8 @@ C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.UiModels\bi
 C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.dll
 C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.pdb
 C:\Users\Audil\Desktop\Assignment\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.csprojResolveAssemblyReference.cache
+E:\Microgaming.Assignment\Microgaming.UiModels\bin\Debug\Microgaming.UiModels.dll
+E:\Microgaming.Assignment\Microgaming.UiModels\bin\Debug\Microgaming.UiModels.pdb
+E:\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.csprojResolveAssemblyReference.cache
+E:\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.dll
+E:\Microgaming.Assignment\Microgaming.UiModels\obj\Debug\Microgaming.UiModels.pdb

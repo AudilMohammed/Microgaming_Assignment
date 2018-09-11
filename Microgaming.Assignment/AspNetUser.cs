@@ -50,6 +50,10 @@ namespace Microgaming.Assignment
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
 
+        public virtual AspNetUser AspNetUsers1 { get; set; }
+
+        public virtual AspNetUser AspNetUser1 { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CharityRecord> CharityRecords { get; set; }
 

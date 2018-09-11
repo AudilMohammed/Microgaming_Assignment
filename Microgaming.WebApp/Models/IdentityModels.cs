@@ -21,7 +21,7 @@ namespace Microgaming.WebApp.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("CharityEntities", throwIfV1Schema: false)
         {
         }
         

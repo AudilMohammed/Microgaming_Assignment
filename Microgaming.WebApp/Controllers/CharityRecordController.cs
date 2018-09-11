@@ -14,9 +14,6 @@ namespace Microgaming.WebApp.Controllers
             return View();
         }
 
-        public ActionResult CreateCharityRecord()
-        {
-            return View();
-        }
+        
     }
 }

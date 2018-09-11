@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microgaming.BAL", "Microgam
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microgaming.UiModels", "Microgaming.UiModels\Microgaming.UiModels.csproj", "{258FE937-E32D-41A2-90A5-4AD0337988DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microgaming.Helper", "Microgaming.Helper\Microgaming.Helper.csproj", "{5EBDEA55-CEBC-40D1-9803-580C3D1A855B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{258FE937-E32D-41A2-90A5-4AD0337988DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{258FE937-E32D-41A2-90A5-4AD0337988DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{258FE937-E32D-41A2-90A5-4AD0337988DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EBDEA55-CEBC-40D1-9803-580C3D1A855B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EBDEA55-CEBC-40D1-9803-580C3D1A855B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EBDEA55-CEBC-40D1-9803-580C3D1A855B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EBDEA55-CEBC-40D1-9803-580C3D1A855B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -10,20 +10,20 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body style="padding-top:20px">
-    <div class="col-md-10 col-md-offset-1">
-        <div class="well">
-            <input id="btnLoadEmployees" class="btn btn-success"
-                   type="button" value="Load Employees" />
+    <div class="col-md-10 col-md-offset-1" style="margin-top:10%">
+        <div class="well" style="min-height:65px">
+            <input type='button' id="btnNavigate" class="btn btn-success pull-right" value="Create Charity Request"/>
         </div>
         <div id="divData" class="well">
             <table class="table table-bordered" id="tblData">
                 <thead>
                     <tr class="success">
-                        <td>ID</td>
                         <td>Title</td>
+                        <td>Description</td>
                         <td>Charity</td>
                         <td>Amount</td>
                         <td>Status</td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody id="tblBody"></tbody>
@@ -57,8 +57,81 @@
             <a id="linkClose" href="#" class="close">&times;</a>
             <div id="divErrorText"></div>
         </div>
+        <div id="SubCharity" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+              
+                    <div class="modal-body">
+                        <div class="col-md-10 col-md-offset-1">
+                           
+                            <div class="well">
+                                <label>Charity Submission Requests</label>
+                                <!--This table contains the fields that we want to capture to register a new user-->
+                                <table class="table table-bordered">                                  
+                                    <tbody>
+                                        <div class="form-group">
+                                            <tr>
+                                                <td>Title</td>
+                                                <td><input type="text" id="txttitle" placeholder="Title" /> </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Description</td>
+                                                <td>
+                                                    <textarea id="txtDescription"
+                                                              placeholder="Description"></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Charity</td>
+                                                <td>
+                                                    <textarea id="txtCharity"
+                                                              placeholder="Charity"></textarea>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Previously supported by PlayItForward -</td>
+                                                <td>
+                                                    <input type="checkbox" id="txtPlayItfwd"
+                                                           placeholder="Previously supported by PlayItForward" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Amount</td>
+                                                <td>
+                                                    <input type="text" id="txtAmount"
+                                                           placeholder="Amount" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>File Upload</td>
+                                                <td>
+                                                    <input type="file" id="txtFileUpload" multiple accept="application/pdf" />                                                  
+                                                </td>
+                                            </tr>
+                                            <tr class="success">
+                                                <td colspan="2">
+                                                    <input id="btnCreate" class="btn btn-success"
+                                                           type="button" value="Create" />
+                                                    <input id="btnUpdate" class="btn btn-success"
+                                                           type="button" value="Update" />
+                                                </td>
+                                            </tr>
+                                        </div>
+                                    </tbody>
+
+                                </table>
+                               
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+            </div>
+        </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/AppScripts/charityRecord.js")
-</body>
+    @Html.Hidden("RedirectToLogin", Url.Action("Index", "Login"));
+    @Html.Hidden("RedirectToCharity", Url.Action("CharityRecord", "CharityRecord"));
+   
+</body>.
 </html>
