@@ -18,9 +18,7 @@
                     <tr class="success">
                         <th colspan="2">
                             Existing User Login
-                            <a href="Register" class="btn btn-success pull-right">
-                                Register
-                            </a>
+                            <input id="btnRegister" class="btn btn-success pull-right" type="button" value="Register" />
                           
                         </th>
                     </tr>
@@ -35,7 +33,7 @@
                     <tr>
                         <td>Password</td>
                         <td>
-                            <input type="password" id="txtPassword"
+                            <input type="password" id="txtPassword" 
                                    placeholder="Password" />
                         </td>
                     </tr>
@@ -57,5 +55,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/Scripts/AppScripts/login.js")
      @Html.Hidden("RedirectToCharityRecord", Url.Action("CharityRecord", "CharityRecord"));
+    @Html.Hidden("RedirectToLogin", Url.Action("Register", "Login"));
 </body>
 </html>

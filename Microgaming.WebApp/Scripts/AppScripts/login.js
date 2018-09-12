@@ -12,6 +12,12 @@
         $('#divError').hide('fade');
     });
 
+    
+    $('#btnRegister').click(function () {
+        var url = $("#RedirectToLogin").val();
+        window.location.href = url;
+    });
+
     $('#btnLogin').click(function () {
         $.ajax({
             url: '/token',

@@ -5,7 +5,18 @@
         window.location.href = url;
     }
     else {
-        $.ajax({           
+      
+            
+        reload_record();
+        
+    }
+    $(document).on('click', '#btnNavigate', function () {
+        $('#SubCharity').modal('show');
+        $("#btnUpdate").hide();
+        $("#btnCreate").show();
+    });
+    function reload_record() {
+        $.ajax({
             url: '/api/Charity/Get',
             method: 'GET',
             headers: {
@@ -14,17 +25,18 @@
             },
             success: function (data) {
                 var a = $("#IsAdmin").val();
-               
+
                 $('#tblBody').empty();
                 $.each(data, function (index, value) {
 
-                    var ab =value.IsAdmin && value.status=='Processing'? "<input type='button' value='Approve'  class='btn btn-sm btn-success approve-charity' id=" + value.id + "/>":"";
+                    var btnShow = value.IsAdmin && value.status == 'Processing' ? " <input type='button' value='Approve'  class='btn btn-sm btn-success approve-charity' id=" + value.id + "/>" : "";
+                    var editbtnShow = value.status == 'Processing' ? "<div><input type='button' value='Edit'  class='btn btn-sm btn-success load-edit' id=" + value.id + "/> <input type='button' value='Delete' class='btn btn-sm btn-success delete-charity' id=" + value.id + "/> " : "";
                     var row = $('<tr><td>' + value.Title + '</td><td>'
                          + value.Description + '</td><td>'
                         + value.Charity + '</td><td>'
                         + value.Currency + '</td><td>'
-                        + value.status + "</td><td><div><input type='button' value='Edit'  class='btn btn-sm btn-success load-edit' id=" + value.id + "/> <input type='button' value='Delete' class='btn btn-sm btn-success delete-charity' id=" + value.id + "/> " + ab + "</td>"
-                       
+                        + value.status + "</td><td>" + editbtnShow + btnShow + "</td>"
+
                         );
                     $('#tblData').append(row);
                 });
@@ -42,12 +54,6 @@
             }
         });
     }
-    $(document).on('click', '#btnNavigate', function () {
-        $('#SubCharity').modal('show');
-        $("#btnUpdate").hide();
-        $("#btnCreate").show();
-    });
-
     $(document).on('click', '.delete-charity', function () {
         var trid = $(this).prop("id");
         $.ajax({
@@ -62,7 +68,9 @@
                 'Authorization': 'Bearer '
                     + sessionStorage.getItem("accessToken")
             },
-            success: function () { }
+            success: function () {
+                reload_record();
+            }
 
         });
     });
@@ -81,7 +89,9 @@
                 'Authorization': 'Bearer '
                     + sessionStorage.getItem("accessToken")
             },
-            success: function () { }
+            success: function () {
+                reload_record();
+            }
 
         });
     });
@@ -105,7 +115,8 @@
                     $('#txttitle').val(data.Title);
                     $('#txtDescription').val(data.Description);
                     $('#txtCharity').val(data.Charity);
-                    $('#txtPlayItfwd').val(data.PlayItFwd);
+                    $('#txtPlayItfwd').attr('checked', data.PlayItFwd);
+                    $('#charityId').val(data.id);
                     $('#txtAmount').val(data.Currency);                                   
                     $("#btnCreate").hide();
                     $("#btnUpdate").show();
@@ -135,11 +146,16 @@
             formdata.append('Title', $('#txttitle').val());
             formdata.append('Description', $('#txtDescription').val());
             formdata.append('Charity', $('#txtCharity').val());
-            formdata.append('PlayItFwd', $('#txtPlayItfwd').val());
+            formdata.append('Id', $('#charityId').val());
+            formdata.append('PlayItFwd', $("#txtPlayItfwd").is(":checked"));
             formdata.append('Amount', parseFloat($('#txtAmount').val()));
             return formdata;
         }
 
+        $('#btnLogoff').click(function () {
+            var url = $("#RedirectToLogin").val();
+            window.location.href = url;
+        });
         $('#btnUpdate').click(function () {
             $.ajax({
                 url: '/api/Charity/UpdateCharity',
@@ -152,7 +168,8 @@
                 contentType: false,
                 processData: false,
                 success: function (d) {
-
+                    $('#SubCharity').modal('hide');
+                    reload_record();
                 },
                 error: function () {
                 }
@@ -176,6 +193,7 @@
                 processData: false,
                 success: function (d) {
                     $('#SubCharity').modal('hide');
+                    reload_record();
 
                 },
                 error: function () {

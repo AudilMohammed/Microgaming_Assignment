@@ -25,7 +25,7 @@ namespace Microgaming.Assignment
                     charityRecord.UserId = record.UserId;
                     charityRecord.Currency = record.Currency;
                     charityRecord.Status = 0;
-
+                    entities.CharityRecords.Add(charityRecord);
                     foreach (var item in record.FileDetails)
                     {
                         FileDetail detailsobj = new FileDetail();
@@ -35,7 +35,7 @@ namespace Microgaming.Assignment
                         entities.FileDetails.Add(detailsobj);
                     }
 
-                    entities.CharityRecords.Add(charityRecord);
+                 
                     entities.SaveChanges();
                 }
             }
@@ -54,19 +54,15 @@ namespace Microgaming.Assignment
                 using (CharityEntities entities = new CharityEntities())
                 {
                     CharityRecord charityRecord = new CharityRecord();
-                    var record = entities.CharityRecords.Where(x => x.Id == model.id).FirstOrDefault();
+                    var record = entities.CharityRecords.Include(x=>x.FileDetails).Where(x => x.Id == model.id).FirstOrDefault();
 
                     record.Title = model.Title;
                     record.Description = model.Description;
                     record.Charity = model.Charity;
                     record.PlayItForward = model.PlayItFwd;
                     record.UserId = model.UserId;
-                    record.Currency = model.Currency;
-                    foreach (var files in record.FileDetails)
-                    {
-                        record.FileDetails.Remove(files);
-
-                    }
+                    record.Currency = model.Currency;                  
+                      
                     foreach (var item in model.FileDetails)
                     {
 
@@ -80,7 +76,7 @@ namespace Microgaming.Assignment
                     entities.SaveChanges();
                 }
             }
-            catch 
+            catch(Exception ex) 
             {
                 throw;
             }

@@ -55,8 +55,7 @@ namespace Microgaming.WebApp.Controllers
         {
            
             var model=GetRecordInfo(HttpContext.Current);
-            CharityRecordServices balObj = new CharityRecordServices();
-            
+            CharityRecordServices balObj = new CharityRecordServices();            
             balObj.UpdateCharityRecord(model);
             return Request.CreateResponse(HttpStatusCode.OK);
         }
@@ -64,42 +63,54 @@ namespace Microgaming.WebApp.Controllers
         private CharityRecordUiModel GetRecordInfo(HttpContext httpContext)
         {
             CharityRecordUiModel model = new CharityRecordUiModel();
-
-            model.Title = httpContext.Request.Params["Title"];
-            model.Description = httpContext.Request.Params["Description"];
-            model.Charity = httpContext.Request.Params["Charity"];
-            model.UserId = User.Identity.GetUserId();
-            model.Currency = float.Parse(httpContext.Request.Params["Amount"], CultureInfo.InvariantCulture.NumberFormat);
-            model.PlayItFwd = true;
-            for (int i = 0; i < httpContext.Request.Files.Count; i++)
+            try
             {
-                HttpPostedFile httpPostedFile = httpContext.Request.Files[i];
-                if (httpPostedFile != null)
+                model.Title = httpContext.Request.Params["Title"];
+                model.Description = httpContext.Request.Params["Description"];
+                model.Charity = httpContext.Request.Params["Charity"];
+               
+                var b = httpContext.Request.Params["Id"];
+                if (httpContext.Request.Params["Id"] != "")
                 {
-                    var type = httpPostedFile.ContentType;
-                    byte[] fileData = null;
-                    using (var binaryReader = new BinaryReader(httpPostedFile.InputStream))
-                    {
-                        fileData = binaryReader.ReadBytes(httpPostedFile.ContentLength);
-                        FileDetailsUiModel fileobj = new FileDetailsUiModel();
-                        fileobj.FileInfo = fileData;
-                        fileobj.FileName = httpPostedFile.FileName;
-                        try
-                        {
-                            model.FileDetails.Add(fileobj);
-                        }
-                        catch (Exception ex)
-                        {
-
-                        }
-                    }
-
-                    if (type != "application/pdf")
-                    {
-                        throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
-                    }
-
+                    model.id = Convert.ToInt64(httpContext.Request.Params["Id"]);
                 }
+                model.UserId = User.Identity.GetUserId();
+                model.Currency = float.Parse(httpContext.Request.Params["Amount"], CultureInfo.InvariantCulture.NumberFormat);
+                model.PlayItFwd = bool.Parse(httpContext.Request.Params["PlayItFwd"]);
+                for (int i = 0; i < httpContext.Request.Files.Count; i++)
+                {
+                    HttpPostedFile httpPostedFile = httpContext.Request.Files[i];
+                    if (httpPostedFile != null)
+                    {
+                        var type = httpPostedFile.ContentType;
+                        byte[] fileData = null;
+                        using (var binaryReader = new BinaryReader(httpPostedFile.InputStream))
+                        {
+                            fileData = binaryReader.ReadBytes(httpPostedFile.ContentLength);
+                            FileDetailsUiModel fileobj = new FileDetailsUiModel();
+                            fileobj.FileInfo = fileData;
+                            fileobj.FileName = httpPostedFile.FileName;
+                            try
+                            {
+                                model.FileDetails.Add(fileobj);
+                            }
+                            catch (Exception ex)
+                            {
+
+                            }
+                        }
+
+                        if (type != "application/pdf")
+                        {
+                            throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+                        }
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                throw;
             }
             return model;
 
